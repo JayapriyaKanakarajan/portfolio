@@ -1,0 +1,332 @@
+/* Fade-in effect */
+.fade-in {
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out; /* Adjust duration if needed */
+  }
+  
+  .fade-in.show {
+	opacity: 1;
+  }
+
+
+  .nav-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 25px;
+    background-color: #111;
+    // background: linear-gradient(to bottom,rgba(117, 122, 126, 1), rgba(117, 122, 126, 0.9));
+    // background: linear-gradient(to bottom,rgba(117, 122, 126, 1), rgba(117, 122, 126, 0.8),rgba(117, 122, 126, 0.6));
+  }
+  
+  .menu-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .menu, .social {
+    display: flex;
+    list-style: none;
+    position: relative;
+  }
+  
+  .menu li, .social li {
+    margin: 0 10px;
+  }
+  
+  .menu a, .social a {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .social {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social a {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .burger-btn {
+    display: none;
+    cursor: pointer;
+  }
+
+  
+  #burger > div {
+    height: 2px;
+    background-color: #fff;
+    transition: 0.5s;
+    z-index: 999;
+  }
+
+  .menu span{
+    position: absolute;
+    top: 0;
+    left: 228px;
+    width: 75px;
+    height: 100%;
+    background: linear-gradient(45deg, #62676b, #56595c);
+    border-radius: 8px;
+    transition: 0.5s;
+    z-index: -1;
+  }
+
+  .menu li:nth-child(1):hover ~ span {
+    left: 30px;
+    width: 45px;
+    border-radius: 50%;
+  }
+  
+  .menu li:nth-child(2):hover ~ span {
+    left: 70px; /* Adjust based on the width of your menu items */
+  }
+  
+  .menu li:nth-child(3):hover ~ span {
+    left: 145px; /* Adjust as necessary */
+  }
+  
+  .menu li:nth-child(4):hover ~ span {
+    left: 228px; /* Adjust as necessary */
+  }
+  
+  
+  /* Mobile Menu */
+  @media (max-width: 900px) {
+    
+    .nav-wrapper{
+      position: relative;
+    }
+
+    .burger-btn {
+      display: flex;
+      width: 30px;
+      overflow: hidden;
+      animation: fadeInFromLeft 2s linear;
+      justify-content: space-between;
+      flex-direction: column;
+      cursor: pointer;
+      height: 1rem;
+    }
+  
+    .menu-wrapper {
+      display: none;
+      flex-direction: column;
+      padding: 7em;
+      align-items: center;
+      animation: slideInLeft 1s ease-in;
+    }
+  
+    .menu-wrapper.open {
+      display: flex;
+      background: #333;
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  
+    .menu {
+      flex-direction: column;
+      margin-top: 10px;
+      display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+  
+    .social {
+      flex-direction: column;
+      margin-top: 20px;
+      display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+    @keyframes fadeInFromLeft {
+      0% {
+        width: 0px;
+      }
+      20% {
+        width: 10px;
+      }
+      50% {
+        width: 15px;
+      }
+      70% {
+        width: 20px;
+      }
+      90% {
+        width: 25px;
+      }
+      100% {
+        width: 30px;
+      }
+    }
+
+    @keyframes slideInLeft {
+      from{
+        transform: translateX(-800px);
+      }
+      to{
+        transform: translateX(0);
+      }
+    }
+
+    #menuToggle {
+      display: none;
+    }
+    
+    #menuToggle:checked ~ #burger > div {
+      background-color: #fff;
+    }
+    
+    #menuToggle:checked ~ #burger > div:nth-child(1) {
+      transform: translateY(10px) rotate(45deg);
+    }
+    
+    #menuToggle:checked ~ #burger > div:nth-child(2) {
+      opacity: 0;
+    }
+    
+    #menuToggle:checked ~ #burger > div:nth-child(3) {
+      transform: translateY(-10px) rotate(-45deg);
+    }
+  }
+
+  .curriculum{    
+    margin-top: 10rem;
+    min-height: 94vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: calc(100% - 160px);
+    // background: linear-gradient(to bottom,rgba(0,0,0, 1), rgba(0,0,0, 0.7), rgba(0,0,0, 0.3), rgba(0,0,0, 0));
+    // background: linear-gradient(to bottom, rgba(17, 17, 17,1), rgba(17, 17, 17, 0.99), rgba(17, 17, 17, 0.88), rgba(17, 17, 17, 0.77), rgba(17, 17, 17, 0));
+    background: linear-gradient(to bottom,#111 70%, #1110);;
+    pointer-events: none; /* prevents interaction with the mask */
+    z-index: 5;
+  }
+  
+  .wrapper {
+    position: absolute;
+    top: 165px;
+    bottom: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .content {
+    padding-bottom: 20px;
+    line-height: 1.2;
+    font-family: 'Raleway', sans-serif;
+    color: #f2f2f2;
+  }
+  
+  .item {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 40px;
+  }
+  
+  .date {
+    text-align: right;
+    box-sizing: border-box;
+    padding-right: 50px;
+    width: 240px;
+    font-weight: 400;
+  }
+
+  .year{
+    font-size: 1.618034em;
+  }
+  
+  .thing {
+    max-width: 700px;
+  }
+  
+  .occupation {
+    line-height: 1.25em;
+    font-weight: 700;
+    font-size: 2.618034025156em;
+  }
+  
+  .location {
+    font-family: Quattrocento, serif;
+    line-height: 2.5em;
+    font-weight: 500;
+    font-size: 1em;
+  }
+  .coursework {
+    font-family: Quattrocento, serif;
+    line-height: 2em;
+    font-weight: 100;
+    font-size: 1em;
+  }
+  
+  .location a {
+    margin-right: 15px;
+    display: inline-block;
+    color: #fff;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  .skill-tag{
+    font-size: 1.618034em;
+    vertical-align: middle;
+  }
+  
+  .skills {
+    vertical-align: top;
+    font-family: Quattrocento, serif;
+    line-height: 1.5em;
+    font-weight: 400;
+    font-size: 1.2em;
+  }
+
+  .type{
+    line-height: 1.25em;
+    font-weight: 700;
+    font-size: 2.618034025156em;
+  }
+
+  .github-icon {
+    opacity: 0;
+    width: 2.5em;
+    height: 2.5em;
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transitions for opacity and scaling */
+    transform: scale(0.5); /* Initial scaling */
+    pointer-events: none; /* Smooth transitions */
+  }
+  
+  .social-icon.github {
+    position: relative;
+  }
+  
+  .social-icon.github:hover .github-icon {
+    opacity: 1;
+    transform: scale(1); /* Scale to original size on hover */
+  }
+  
+  .social-icon.github:hover .github-text {
+    position: relative;
+    cursor: none; /* Hides default cursor */
+    color: white;
+  }
+  

@@ -1,0 +1,95 @@
+<div class="fade-in">
+  <nav class="nav-wrapper">
+    <div class="mobile-menu">
+      <!--<button (click)="toggleMenu()" class="burger-btn">
+        &#9776; 
+      </button> -->
+      <input type="checkbox" id="menuToggle" (click)="toggleMenu()" class="burger-btn">
+      <label id="burger" for="menuToggle" class="burger-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </label>
+    </div>
+    <div [ngClass]="{'open': menuOpen, 'closed': !menuOpen}" class="menu-wrapper">
+      <ul class="menu">
+        <li><a routerLink="/" (click)="toggleMenu()"><i class="fa-solid fa-cat"></i></a></li>
+        <li><a routerLink="/bio" (click)="toggleMenu()" active>About</a></li>
+        <li><a routerLink="/projects" (click)="toggleMenu()">Projects</a></li>
+        <li><a routerLink="/resume" (click)="toggleMenu()">Résumé</a></li>
+        <span></span>
+      </ul>
+      <ul class="social">
+        <li><a  href="mailto:jayapriyakanakarajan@gmail.com" target="_blank" class="social-icon github">
+          <span class="github-text">Mail</span>
+          <img src="assets/gmail.png" alt="GitHub Logo" class="github-icon" />
+        </a></li>
+        <li>
+          <a href="https://github.com/JayapriyaKanakarajan" target="_blank" class="social-icon github">
+            <span class="github-text">GitHub</span>
+            <img src="assets/github-mark-white.png" alt="GitHub Logo" class="github-icon" />
+          </a>
+        </li>
+        
+        <li><a href="https://www.linkedin.com/in/jaya-priya-kanakarajan/" target="_blank" class="social-icon github">
+          <span class="github-text">LinkedIn</span>
+          <img src="assets/linkedin.png" alt="GitHub Logo" class="github-icon" />
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="mask"></div>
+    <div class="card-wrapper d-flex">
+      <div class="flip-card-container">
+          <div class="flip-card">
+              <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <div class="card-overlay">
+                      <h2 style="color: white;font-weight: bold;z-index: 20;"><i class="fa-brands fa-bitcoin" style="color: #FFD43B;margin-right: 8px;"></i>Crypto Checker</h2>
+                      <p style="color: white;font-weight: bold; font-size: 20px;z-index: 20;">Angular Project - Cryptocurrency price tracker | Angular HTTP Client | Angular Material UI</p>
+                      </div>
+                  </div>
+                  <div class="flip-card-back p-3">
+                      <h2 style="font-weight: bold;">Crypto Checker</h2>
+                      <p><span style="font-weight: bold;">Crypto Checker </span>is a responsive web application built with Angular, designed to provide real-time cryptocurrency price tracking. Users can view up-to-date prices of various cryptocurrencies in either CAD or USD. The app features a sortable and paginated table for easy navigation, along with graphical charts for visualizing historical price trends. Users can switch currencies via a dropdown, and explore detailed data for individual cryptocurrencies. The clean and intuitive UI is built with Angular Material, making it user-friendly across different devices.</p>
+                      <h2 style="color: #00f7ff;font-size: 20px;">Github: <a href="https://github.com/JayapriyaKanakarajan/crypto_checker" target="_blank" style="color: white;font-size: 20px;">Crypto_checker</a></h2>
+                      <button type="button" class="btn btn-outline-info" (click)="goToCryptoWeb()">View ></button>
+                      <hr>
+                      <div class="skills" *ngFor="let app of apps.app1" style="display: inline-block;">
+                        <div class="tag me-2 mb1">
+                          {{app}}
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="flip-card-container">
+          <div class="flip-card">
+              <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <div class="card-overlay">
+                      <h2 style="color: white;font-weight: bold;z-index: 20;">Progressive Web App (PWA)</h2>
+                      <p style="color: white;font-weight: bold; font-size: 20px; z-index: 20;">Tic Tac Toe<img src="assets/game.png" alt="tic-tac-toe" style="max-width: 50px;margin-left: 20px;"></p>
+                      </div>
+                  </div>
+                  <div class="flip-card-back p-3">
+                    <h2 style="font-weight: bold;">Tic-Tac-Toe PWA</h2>
+                    <p>The <span style="font-weight: bold;">Tic-Tac-Toe Progressive Web App (PWA) </span>is a modern, mobile-friendly web game built using Angular and Nebular UI components. It offers a clean and interactive game board for users to play the classic Tic-Tac-Toe game. The app is built as a PWA, allowing users to install it on their devices and use it offline. The game board is rendered dynamically, and the application provides a smooth user experience with responsive layouts. The theme is styled using Nebular's "Cosmic" theme, adding a vibrant and futuristic look to the UI.</p>
+                    <h2 style="color: #00f7ff;font-size: 20px;">Github: <a href="https://github.com/JayapriyaKanakarajan/tic-tac-toe" target="_blank" style="font-size: 20px; color: white;">Tic-Tac-Toe</a></h2>
+                    <button type="button" class="btn btn-outline-info" (click)="goToTictactoeWeb()">View ></button>
+                    <hr>
+                    <div class="skills" *ngFor="let app of apps.app2" style="display: inline-block;">
+                      <div class="tag me-2 mb1">
+                        {{app}}
+                      </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

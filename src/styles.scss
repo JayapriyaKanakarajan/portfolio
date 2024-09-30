@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Quattrocento';
+    src: url('../src/assets/Quattrocento-Regular.ttf');
+}
+@font-face {
+    font-family: 'Quattrocento-Bold';
+    src: url('../src/assets/Quattrocento-Bold.ttf');
+}
+body{
+	background-color: #111;
+}

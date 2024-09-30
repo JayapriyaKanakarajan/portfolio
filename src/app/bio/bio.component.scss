@@ -1,0 +1,291 @@
+/* Fade-in effect */
+.fade-in {
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out; /* Adjust duration if needed */
+  }
+  
+  .fade-in.show {
+	opacity: 1;
+  }
+
+
+  .nav-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 25px;
+  }
+  
+  .menu-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .menu, .social {
+    display: flex;
+    list-style: none;
+    position: relative;
+  }
+  
+  .menu li, .social li {
+    margin: 0 10px;
+  }
+  
+  .menu a, .social a {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .social {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social a {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .burger-btn {
+    display: none;
+    cursor: pointer;
+  }
+
+  
+  #burger > div {
+    height: 2px;
+    background-color: #fff;
+    transition: 0.5s;
+    z-index: 999;
+  }
+
+  .menu span{
+    position: absolute;
+    top: 0;
+    left: 70px;
+    width: 75px;
+    height: 100%;
+    background: linear-gradient(45deg, #62676b, #56595c);
+    border-radius: 8px;
+    transition: 0.5s;
+    z-index: -1;
+  }
+
+  .menu li:nth-child(1):hover ~ span {
+    left: 30px;
+    width: 45px;
+    border-radius: 50%;
+  }
+  
+  .menu li:nth-child(2):hover ~ span {
+    left: 70px; /* Adjust based on the width of your menu items */
+  }
+  
+  .menu li:nth-child(3):hover ~ span {
+    left: 145px; /* Adjust as necessary */
+  }
+  
+  .menu li:nth-child(4):hover ~ span {
+    left: 228px; /* Adjust as necessary */
+  }
+  
+  
+  /* Mobile Menu */
+  @media (max-width: 900px) {
+    
+    .nav-wrapper{
+      position: relative;
+    }
+
+    .burger-btn {
+      display: flex;
+      width: 30px;
+      overflow: hidden;
+      animation: fadeInFromLeft 2s linear;
+      justify-content: space-between;
+      flex-direction: column;
+      cursor: pointer;
+      height: 1rem;
+    }
+  
+    .menu-wrapper {
+      display: none;
+      flex-direction: column;
+      padding: 7em;
+      align-items: center;
+      animation: slideInLeft 1s ease-in;
+    }
+  
+    .menu-wrapper.open {
+      display: flex;
+      background: #333;
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  
+    .menu {
+      flex-direction: column;
+      margin-top: 10px;
+      display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+  
+    .social {
+      flex-direction: column;
+      margin-top: 20px;
+      display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+    @keyframes fadeInFromLeft {
+      0% {
+        width: 0px;
+      }
+      20% {
+        width: 10px;
+      }
+      50% {
+        width: 15px;
+      }
+      70% {
+        width: 20px;
+      }
+      90% {
+        width: 25px;
+      }
+      100% {
+        width: 30px;
+      }
+    }
+
+    @keyframes slideInLeft {
+      from{
+        transform: translateX(-800px);
+      }
+      to{
+        transform: translateX(0);
+      }
+    }
+
+    #menuToggle {
+      display: none;
+    }
+    
+    #menuToggle:checked ~ #burger > div {
+      background-color: #fff;
+    }
+    
+    #menuToggle:checked ~ #burger > div:nth-child(1) {
+      transform: translateY(10px) rotate(45deg);
+    }
+    
+    #menuToggle:checked ~ #burger > div:nth-child(2) {
+      opacity: 0;
+    }
+    
+    #menuToggle:checked ~ #burger > div:nth-child(3) {
+      transform: translateY(-10px) rotate(-45deg);
+    }
+  }
+  
+.bio{
+  padding: 40px 50px;
+    min-height: 94vh;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-family: Quattrocento, serif;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+    h1{
+    font-family: Raleway, sans-serif;
+    font-weight: 800;
+    color: #eef0f2;
+    position: relative;
+    animation: text 4s 1;
+    letter-spacing: 5px;
+    background: #111;
+    }
+    span{
+      color: #00f7ff;
+          font-family: cursive;
+          font-size: 25px;
+    }
+    h2{
+      color: #f2f2f2;
+      font-weight: 500;
+    }
+    p{
+    font-weight: 200;
+    color: #eef0f2;
+    font-family: monospace;
+    }
+    h3{
+        // font-weight: 300;
+        color: #eef0f2e6;
+
+        a{
+          text-decoration: none;
+          color: #00f7ff;
+          font-family: cursive;
+        }
+    }
+
+    @keyframes text {
+      0% {
+        color: #111;
+        margin-bottom: -40px;
+      }
+      30% {
+        letter-spacing: 12px;
+        margin-bottom: -40px;
+      }
+      85% {
+        letter-spacing: 5px;
+        margin-bottom: -40px;
+      }
+      100% {
+        margin-bottom: 20px;
+      }
+    }
+}
+
+.github-icon {
+  opacity: 0;
+  width: 2.5em;
+  height: 2.5em;
+  position: absolute;
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transitions for opacity and scaling */
+  transform: scale(0.5); /* Initial scaling */
+  pointer-events: none; /* Smooth transitions */
+}
+
+.social-icon.github {
+  position: relative;
+}
+
+.social-icon.github:hover .github-icon {
+  opacity: 1;
+  transform: scale(1); /* Scale to original size on hover */
+}
+
+.social-icon.github:hover .github-text {
+  position: relative;
+  cursor: none; /* Hides default cursor */
+  color: white;
+}

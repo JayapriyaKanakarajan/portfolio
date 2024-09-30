@@ -1,0 +1,146 @@
+<div class="fade-in">
+  <nav class="nav-wrapper">
+    <div class="mobile-menu">
+      <!--<button (click)="toggleMenu()" class="burger-btn">
+          &#9776; 
+        </button> -->
+      <input type="checkbox" id="menuToggle" (click)="toggleMenu()" class="burger-btn">
+      <label id="burger" for="menuToggle" class="burger-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </label>
+    </div>
+    <div [ngClass]="{'open': menuOpen, 'closed': !menuOpen}" class="menu-wrapper">
+      <ul class="menu">
+        <li><a routerLink="/" (click)="toggleMenu()"><i class="fa-solid fa-cat"></i></a></li>
+        <li><a routerLink="/bio" (click)="toggleMenu()" active>About</a></li>
+        <li><a routerLink="/projects" (click)="toggleMenu()">Projects</a></li>
+        <li><a routerLink="/resume" (click)="toggleMenu()">Résumé</a></li>
+        <span></span>
+      </ul>
+      <ul class="social">
+        <li><a href="mailto:jayapriyakanakarajan@gmail.com" target="_blank" class="social-icon github">
+            <span class="github-text">Mail</span>
+            <img src="assets/gmail.png" alt="GitHub Logo" class="github-icon" />
+          </a></li>
+        <li>
+          <a href="https://github.com/JayapriyaKanakarajan" target="_blank" class="social-icon github">
+            <span class="github-text">GitHub</span>
+            <img src="assets/github-mark-white.png" alt="GitHub Logo" class="github-icon" />
+          </a>
+        </li>
+
+        <li><a href="https://www.linkedin.com/in/jaya-priya-kanakarajan/" target="_blank" class="social-icon github">
+            <span class="github-text">LinkedIn</span>
+            <img src="assets/linkedin.png" alt="GitHub Logo" class="github-icon" />
+          </a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="curriculum">
+    <div class="mask"></div>
+    <div id="iscroll" class="wrapper">
+      <ul class="content">
+        <li class="item">
+          <div class="date">
+            <div class="year">Sept 2023 – now</div>
+          </div>
+          <div class="thing">
+            <div class="occupation">Master of Engineering, Engineering Systems & Computing</div>
+            <div class="location">
+              University of Guelph, Guelph Ontario Canada
+            </div>
+            <div class="coursework">[ Intro to AI, Cyber Security for Eng, Biomedical Robotics, Advanced Control
+              Systems, Internet of Things, Signals Processing, Communication in Engg, Adv Computer Networks,
+              Optimization Techniques, Professionalism & Ethics ]</div>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="date">
+            <div class="year">Jan 2022 – Sept 2023</div>
+          </div>
+          <div class="thing">
+            <div class="occupation">Engineer - Frontend Developer</div>
+            <div class="location">
+              Renault Nissan Technology Business Centre India, Chennai India
+            </div>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="date">
+            <div class="year">Jan 2021 – Dec 2022</div>
+          </div>
+          <div class="thing">
+            <div class="occupation">Graduate Engineer Trainee</div>
+            <div class="location">
+              Renault Nissan Technology Business Centre India, Chennai India
+            </div>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="date">
+            <div class="year">Oct 2020 – Dec 2020</div>
+          </div>
+          <div class="thing">
+            <div class="occupation">Internship Trainee</div>
+            <div class="location">
+              Renault Nissan Technology Business Centre India, Chennai India
+            </div>
+          </div>
+        </li>
+
+
+        <li class="item">
+          <div class="date">
+            <div class="year">2016 – 2020</div>
+          </div>
+          <div class="thing">
+            <div class="occupation">Bachelor of Engineering, Electronics & Communication Engineering</div>
+            <div class="location">
+              S.A. Engineering College, Anna University, Chennai India
+            </div>
+            <div class="coursework">[ Computer Programming, Object Oriented Programming and Data Structures,
+              Microprocessor and Microcontroller, Digital Signal Processing, Medical Electronics, Digital Image
+              Processing, VLSI Design, Computer Networks,
+              RF and Microwave Engineering, Circuit Theory, Advanced Computer Architecture, Embedded and Real Time
+              Systems, Wireless Communication,
+              Wireless Networks ]</div>
+            <div class="coursework"><span style="font-weight: bold;">Paper Presentation & Final Year Project: </span>BODY-TO-BODY Communication in Biomedical Application Using REDTACTON [June/2021]</div>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="date">
+            <div class="skill-tag">Skills</div>
+          </div>
+          <div class="thing">
+            <span *ngFor="let category of skillsArray">
+              <span class="category">
+                <span class="type">{{ category.type }}</span>
+              </span>
+              <span class="skills">
+                <span *ngFor="let skill of category.content">{{ skill }}, </span>
+              </span>
+            </span>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="date">
+            <div class="skill-tag">Certification</div>
+          </div>
+          <div class="thing">
+            <div class="location">Business English certificate – vantage (B2 level), part of the university of Cambridge.</div>
+            <div class="location">Cloud Computing – NPTEL, IIT Madras.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </main>
+
+</div>

@@ -1,0 +1,57 @@
+<div class="fade-in">
+  <nav class="nav-wrapper">
+    <div class="mobile-menu">
+      <!--<button (click)="toggleMenu()" class="burger-btn">
+        &#9776; 
+      </button> -->
+      <input type="checkbox" id="menuToggle" (click)="toggleMenu()" class="burger-btn">
+      <label id="burger" for="menuToggle" class="burger-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </label>
+    </div>
+    <div [ngClass]="{'open': menuOpen, 'closed': !menuOpen}" class="menu-wrapper">
+      <ul class="menu">
+        <li><a routerLink="/" (click)="toggleMenu()"><i class="fa-solid fa-cat"></i></a></li>
+        <li><a routerLink="/bio" (click)="toggleMenu()" active>About</a></li>
+        <li><a routerLink="/projects" (click)="toggleMenu()">Projects</a></li>
+        <li><a routerLink="/resume" (click)="toggleMenu()">Résumé</a></li>
+        <span></span>
+      </ul>
+      <ul class="social">
+        <li><a href="mailto:jayapriyakanakarajan@gmail.com" target="_blank" class="social-icon github">
+          <span class="github-text">Mail</span>
+          <img src="assets/gmail.png" alt="GitHub Logo" class="github-icon" />
+        </a></li>
+        <li>
+          <a href="https://github.com/JayapriyaKanakarajan" target="_blank" class="social-icon github">
+            <span class="github-text">GitHub</span>
+            <img src="assets/github-mark-white.png" alt="GitHub Logo" class="github-icon" />
+          </a>
+        </li>
+        
+        <li><a href="https://www.linkedin.com/in/jaya-priya-kanakarajan/" target="_blank" class="social-icon github">
+          <span class="github-text">LinkedIn</span>
+          <img src="assets/linkedin.png" alt="GitHub Logo" class="github-icon" />
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- <div class="container"> -->
+    <div class="row bio">
+      <div class="col-lg-8 text-left">
+        <h1>Hi, I’m Jaya Priya Kanakarajan.</h1>
+        <span>Frontend Developer</span>
+        <h2>A creative web developer living in Canada, with a passion for building
+          intuitive and impactful digital experiences.</h2>
+        <p>With experience leading projects at Renault Nissan and a Master’s in Engineering Systems and Computing, I
+          specialize in creating responsive, user-friendly web applications. I love solving complex problems through clean
+          design and innovative technology.</p>
+        <h3>Check out my <a routerLink="/projects">Projects<i class="fa-solid fa-arrow-up-right-from-square" style="font-size: x-small;vertical-align: top;"></i></a> and Let’s collaborate to bring ideas to life! </h3>
+      </div>
+    </div>
+  <!-- </div> -->
+
+</div>
