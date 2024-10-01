@@ -1,4 +1,5 @@
 import { Component, AfterViewInit, ElementRef, ViewChild, Renderer2, HostListener } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-bio',
@@ -8,9 +9,17 @@ import { Component, AfterViewInit, ElementRef, ViewChild, Renderer2, HostListene
 export class BioComponent implements AfterViewInit {
   menuOpen = false;
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, private router: Router) {
+    // Subscribe to router events to detect route changes
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.closeMenu();
+      }
+    });
+  }
 
   ngAfterViewInit() {
+    console.log(this.menuOpen)
     // Add the 'show' class to trigger the fade-in effect
     const content = document.querySelector('.fade-in');
     if (content) {
@@ -23,9 +32,20 @@ export class BioComponent implements AfterViewInit {
   
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
+    this.resetBurgerIcon();
   }
 
+  closeMenu() {
+    this.menuOpen = false;
+    this.resetBurgerIcon();
+  }
 
+  resetBurgerIcon() {
+    const checkbox = document.getElementById('menuToggle') as HTMLInputElement;
+    if (checkbox) {
+      checkbox.checked = this.menuOpen;  // Manually reset the checkbox to ensure burger icon resets
+    }
+  }
   
   // HostListener listens to mouse movement when hovering over any social link
   @HostListener('mousemove', ['$event']) onMouseMove(event: MouseEvent) {

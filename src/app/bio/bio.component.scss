@@ -96,7 +96,7 @@
   
   
   /* Mobile Menu */
-  @media (max-width: 900px) {
+  @media (max-width: 1000px) {
     
     .nav-wrapper{
       position: relative;
@@ -130,6 +130,7 @@
       top: 0;
       left: 0;
     }
+
   
     .menu {
       flex-direction: column;

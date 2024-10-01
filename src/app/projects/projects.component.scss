@@ -97,7 +97,7 @@
   
   
   /* Mobile Menu */
-  @media (max-width: 900px) {
+  @media (max-width: 1000px) {
     
     .nav-wrapper{
       position: relative;
@@ -197,8 +197,26 @@
     #menuToggle:checked ~ #burger > div:nth-child(3) {
       transform: translateY(-10px) rotate(-45deg);
     }
+
+    .card-wrapper{
+      flex-direction: column;
+    }  
+
   }
 
+  @media (max-width: 480px) {
+    .flip-card-container {
+      width: 20rem !important;  /* Use !important to force this style */
+    }
+
+    .tag{
+      padding: 0 5px !important;
+      background-color: #111 !important;
+      color: white !important;
+      font-size: small !important;
+      margin-top: 2px !important;
+    }
+  }
 
   .container {
     margin-top: 10rem;
@@ -211,15 +229,19 @@
     overflow-y: auto;
   } 
 
+  .card-wrapper{
+    display: flex;
+  }
+
   .flip-card-container {
     perspective: 1000px;
     overflow: hidden;
-    width: 400px;
-    height: 700px;
+    width: 25rem;
+    height: 46rem;
     transform: translateX(-100%);
     animation: slideIn 2s forwards ease-out;
     cursor: pointer;
-    margin: 0 20px;
+    margin: 1rem;
   }
 
 
@@ -248,8 +270,8 @@
 
   .card-overlay{
     background-color: rgba(42, 77, 78, 0.8);
-    width: 392px;
-    height: 692px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
     position: absolute;
     top: -2px;
     left: -2px;
@@ -257,6 +279,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 1;
   }
   
   .flip-card-front, .flip-card-back {
@@ -278,7 +301,7 @@
     height: calc(100% + 4px);
     background-color: #111;
     z-index: -1; 
-    animation: borderAnim 6s linear infinite;
+    // animation: borderAnim 6s linear infinite;
     background-size: 150%;
   
   }
@@ -364,7 +387,7 @@
 
   /* Responsive layout voor kleinere schermen */
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1000px) {
     .container {
       margin-top: 3rem;
       justify-content: center;
